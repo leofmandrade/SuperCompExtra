@@ -1,1 +1,83 @@
-# SuperCompExtra
+# Algoritmo Genético em C++ com Plotagem de Gráficos em Python
+
+Este projeto implementa um algoritmo genético em C++ para resolver o problema da mochila (Knapsack Problem). O algoritmo busca a solução ótima para o problema, onde a mochila tem uma capacidade limitada e os itens têm pesos e valores variados. O objetivo é maximizar o valor total dos itens na mochila sem exceder a capacidade.
+
+## Estrutura do Projeto
+
+- **algoritmo.cpp**: Implementação do algoritmo genético em C++.
+- **fitness_data.txt**: Arquivo gerado pelo programa em C++ que contém a aptidão das melhores soluções ao longo das gerações.
+- **plot_fitness.py**: Script em Python para plotar os dados de aptidão a partir do arquivo `fitness_data.txt`.
+
+## Algoritmo Genético
+
+O algoritmo genético segue as etapas padrão de inicialização da população, cálculo da aptidão, seleção dos pais, cruzamento e mutação. As variáveis e funções principais são:
+
+- `num_itens`, `capacidade_mochila`, `solucoes_por_pop`, `num_geracoes`: Constantes definindo as configurações do problema.
+- `gerar_itens()`: Função para gerar itens aleatórios com pesos e valores.
+- `inicializar_populacao()`: Função para inicializar a população de soluções aleatoriamente.
+- `calcular_aptidao()`: Função para calcular a aptidão (valor total) de uma solução.
+- `selecionar_pais()`: Função para selecionar os melhores pais com base na aptidão.
+- `cruzamento()`: Função para realizar o cruzamento entre dois pais.
+- `mutacao()`: Função para realizar a mutação de um descendente.
+- `otimizar()`: Função principal que executa o algoritmo genético ao longo de várias gerações e salva os dados de aptidão em um arquivo.
+
+## Plotagem dos Gráficos
+
+O script Python `plot_fitness.py` é usado para ler os dados de aptidão do arquivo `fitness_data.txt` e gerar gráficos que mostram a evolução da aptidão média e máxima ao longo das gerações.
+
+### Dependências
+
+- `matplotlib`
+- `numpy`
+
+### Executando o Script Python
+
+Para executar o script Python, primeiro instale as dependências necessárias (caso ainda não estejam instaladas):
+
+```sh
+pip install matplotlib numpy
+```
+
+Em seguida, execute o script:
+
+```sh
+python plot_fitness.py
+```
+
+## Como Usar
+
+### Compilar e Executar o Código C++
+
+1. Certifique-se de ter um compilador C++ instalado.
+2. Compile o código com o comando:
+
+```sh
+g++ -o algoritmo algoritmo.cpp
+```
+
+3. Execute o programa:
+
+```sh
+./algoritmo
+```
+
+### Plotar os Dados de Aptidão
+
+1. Após executar o programa em C++, o arquivo `fitness_data.txt` será gerado.
+2. Execute o script Python para plotar os gráficos:
+
+```sh
+python plot_fitness.py
+```
+
+### Visualizar os Gráficos
+
+O script Python irá gerar um gráfico mostrando a aptidão média e máxima ao longo das gerações. O gráfico será exibido na tela.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests para melhorias no código.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
